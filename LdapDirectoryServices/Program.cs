@@ -35,7 +35,13 @@ namespace LdapDirectoryServices
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine($"Exception: {ex.Message}.");
+                if (ex.InnerException != null)
+                {
+                    Console.WriteLine($"Inner Exception: {ex.InnerException.Message}");
+                }
+                Console.WriteLine($"StackTrace: {ex.StackTrace}.");
+
             }
             Console.ReadKey();
         }
